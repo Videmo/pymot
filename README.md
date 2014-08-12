@@ -214,4 +214,4 @@ Feel free to report bugs and contribute new features.
 
 ## References
 
-[0] Keni Bernardin and Rainer Stiefelhagen. "Evaluating multiple object tracking performance: the CLEAR MOT metrics" J. Image Video Process. 2008, Article 1 (January 2008), 10 pages. DOI=10.1155/2008/246309 http://dx.doi.org/10.1155/2008/246309
+[0] Keni Bernardin and Rainer Stiefelhagen. ["Evaluating multiple object tracking performance: the CLEAR MOT metrics"](https://raw.githubusercontent.com/Videmo/pymot/master/papers/bernardin2008evaluating.pdf) J. Image Video Process. 2008, Article 1 (January 2008), 10 pages. DOI=10.1155/2008/246309 http://dx.doi.org/10.1155/2008/246309
