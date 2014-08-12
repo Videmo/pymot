@@ -204,6 +204,19 @@ Corresponding ground truth annotations and hypotheses can be found if they are n
 
 The best matching of all ground truth annotations to all hypotheses is found by Munkre's algorithm (also know as the Hungarian algorithm). It uses the intersection-over-union (IOU) ratio of bounding boxes. By default only bounding boxes with an IOU of more than 0.2 are considered for matching.
 
+## 3D MOT scoring
+The subdirectory `3d` contains a collection of scripts for 3D MOT scoring developed by Keni Bernardin for the CLEAR2007 evaluation [1].
+
+`MOTScore.pl` computes the performance measures in the same way as **pymot** does, except for mapping groundtruth and hypothesis based on Euclidean distance.
+The file format differs from **pymot**'s. Please refer to the [readme file](https://raw.githubusercontent.com/Videmo/pymot/master/3d/Readme_MOTscore.txt) and [this whitepaper](https://raw.githubusercontent.com/Videmo/pymot/master/papers/clear2007-evaluation-plan.pdf) for the file format specification.
+
+`scoreAll.py` is a wrapper around `MOTScore.pl` to work on a set of groundtruth label files and hypothesis files.
+Please refer to its [readme file](https://raw.githubusercontent.com/Videmo/pymot/master/3d/Readme_scoreAll.txt).
+
+**pymot** and the 3D MOT scoring script use the same underlying algorithm for tracking evaluation.
+We thus aim to make **pymot** capable of scoring 3D trackers and replace the 3D MOT scoring script.
+Please feel free to contribute.
+
 ## Contributors
 * [Markus Roth](https://github.com/herr-biber) (roth@videmo.de)
 * [Martin Bäuml](https://github.com/baeuml) (baeuml@kit.edu)
@@ -215,3 +228,5 @@ Feel free to report bugs and contribute new features.
 ## References
 
 [0] Keni Bernardin and Rainer Stiefelhagen. ["Evaluating multiple object tracking performance: the CLEAR MOT metrics"](https://raw.githubusercontent.com/Videmo/pymot/master/papers/bernardin2008evaluating.pdf) J. Image Video Process. 2008, Article 1 (January 2008), 10 pages. DOI=10.1155/2008/246309 http://dx.doi.org/10.1155/2008/246309
+
+[1] Stiefelhagen, Rainer, et al. "The CLEAR 2007 evaluation." Multimodal Technologies for Perception of Humans. Springer Berlin Heidelberg, 2008. 3-34. DOI=10.1007/978-3-540-68585-2_1 http://dx.doi.org/10.1007/978-3-540-68585-2_1
