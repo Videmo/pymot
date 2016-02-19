@@ -21,7 +21,7 @@ class MOTEvaluation:
         self.overlap_threshold_ = 0.2
         """Bounding box overlap threshold"""
     
-        self.munkres_inf_ = 5.0*(10**17)
+        self.munkres_inf_ = sys.maxsize
         """Not quite infinite number for Munkres algorithm"""
     
         self.sync_delta_ = 0.001
