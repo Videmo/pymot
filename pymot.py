@@ -15,10 +15,10 @@ LOG = logging.getLogger(__name__)
 
 class MOTEvaluation:
 
-    def __init__(self, groundtruth, hypotheses):
+    def __init__(self, groundtruth, hypotheses, overlap_threshold):
         """Constructor """
         
-        self.overlap_threshold_ = 0.2
+        self.overlap_threshold_ = overlap_threshold
         """Bounding box overlap threshold"""
     
         self.munkres_inf_ = sys.maxsize
@@ -559,6 +559,7 @@ if __name__ == "__main__":
     parser.add_argument('-b', '--hypothesis', required=True)
     parser.add_argument('-c', '--check_format', action="store_true", default=True)
     parser.add_argument('-v', '--visual_debug_file')
+    parser.add_argument('-i', '--iou', default=0.2, type=float, help='iou threshold')
     args = parser.parse_args()
 
     # Load ground truth according to format
@@ -579,7 +580,7 @@ if __name__ == "__main__":
     hypo.close()
 
 
-    evaluator = MOTEvaluation(groundtruth, hypotheses)
+    evaluator = MOTEvaluation(groundtruth, hypotheses, args.iou)
 
     if(args.check_format):
         formatChecker = FormatChecker(groundtruth, hypotheses)

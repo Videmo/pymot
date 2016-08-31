@@ -21,6 +21,7 @@ optional arguments:
   -b HYPOTHESIS, --hypothesis HYPOTHESIS
   -c, --check_format
   -v VISUAL_DEBUG_FILE, --visual_debug_file VISUAL_DEBUG_FILE
+  -i IOU, --iou IOU     iou threshold
 ```
 You have to feed `pymot.py` with a groundtruth file and a hypothesis file.
 
