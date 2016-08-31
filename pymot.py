@@ -15,10 +15,10 @@ LOG = logging.getLogger(__name__)
 
 class MOTEvaluation:
 
-    def __init__(self, groundtruth, hypotheses, overlap_threhold):
+    def __init__(self, groundtruth, hypotheses, overlap_threshold):
         """Constructor """
         
-        self.overlap_threshold_ = overlap_threhold
+        self.overlap_threshold_ = overlap_threshold
         """Bounding box overlap threshold"""
     
         self.munkres_inf_ = sys.maxsize
